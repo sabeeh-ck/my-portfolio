@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import ProjectSection from './components/ProjectSection'
 
 function App() {
     const [darkMode, setDarkMode] = useState(false)
@@ -21,9 +22,10 @@ function App() {
 
     return (
         <>
-            <Header setDarkMode={setDarkMode} />
+            <Header darkMode={darkMode} setDarkMode={setDarkMode} />
             <main className="mt-16 px-4">
                 <Hero />
+                <ProjectSection />
             </main>
         </>
     )
