@@ -4,7 +4,9 @@ export default function Header({ darkMode, setDarkMode }) {
     const [nav, setNav] = useState(false)
 
     useEffect(() => {
-        document.body.classList.toggle('overflow-hidden')
+        nav
+            ? document.body.classList.add('overflow-hidden')
+            : document.body.classList.remove('overflow-hidden')
     }, [nav])
 
     const toggleDarkMode = () => setDarkMode((prev) => !prev)
