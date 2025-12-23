@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import About from './components/About'
 import ProjectSection from './components/ProjectSection'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
     const [darkMode, setDarkMode] = useState(false)
@@ -23,12 +25,14 @@ function App() {
     return (
         <>
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-            <main className="mt-18 flex flex-col gap-8 px-6 pt-4">
+            <main className="mx-6 mt-18 mb-6 flex max-w-3xl flex-col gap-8 md:mx-12 lg:mx-auto">
                 <Hero />
-                <ProjectSection />
+                <About />
                 <Skills />
+                <ProjectSection />
                 <Contact />
             </main>
+            <Footer />
         </>
     )
 }

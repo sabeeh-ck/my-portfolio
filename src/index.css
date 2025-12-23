@@ -8,6 +8,8 @@
     --color-border: #e5e5e5;
     --color-textmute: #737373;
     --color-text: #171717;
+    --color-resume: #b22222;
+    --color-project: #008000;
 }
 
 .dark {
@@ -16,10 +18,16 @@
     --color-border: #262626;
     --color-textmute: #a3a3a3;
     --color-text: #fafafa;
+    --color-resume: #b22222;
 }
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -27,19 +35,19 @@ body {
 }
 
 h1 {
-    @apply text-2xl font-bold;
+    @apply text-xl font-extrabold md:text-3xl lg:text-4xl;
 }
 
 h2 {
-    @apply text-xl font-bold;
+    @apply text-xl font-bold md:text-2xl lg:text-3xl;
 }
 
 h3 {
-    @apply font-semibold;
+    @apply font-semibold md:text-lg lg:text-xl;
 }
 
 .button {
-    @apply cursor-pointer rounded-lg px-4 py-2;
+    @apply cursor-pointer rounded-lg px-5 py-3;
 }
 
 .material-symbols-rounded {
