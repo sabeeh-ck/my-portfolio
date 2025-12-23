@@ -3,11 +3,6 @@ import { Fragment } from 'react'
 export default function Contact() {
     const socials = [
         {
-            name: 'Email',
-            url: 'mailto:sabeehck02@gmail.com',
-            value: 'sabeehck02@gmail.com',
-        },
-        {
             name: 'GitHub',
             url: 'https://github.com/sabeeh-ck',
             value: '@sabeeh-ck',
@@ -27,7 +22,12 @@ export default function Contact() {
                     <Fragment key={social.name}>
                         <dt className="font-bold">{social.name}</dt>
                         <dd className="text-textmute text-sm font-semibold md:text-base">
-                            <a href={social.url} className="hover:underline">
+                            <a
+                                href={social.url}
+                                className="hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 {social.value}
                             </a>
                         </dd>
