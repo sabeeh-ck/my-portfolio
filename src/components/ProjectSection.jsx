@@ -8,9 +8,11 @@ export default function ProjectSection() {
         <section id="projects" className="flex scroll-mt-20 flex-col">
             <h2 className="mb-4">Projects</h2>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {projects.map((project) => (
-                    <Project key={project.id} project={project} />
-                ))}
+                {projects
+                    .sort((a, b) => a.order - b.order)
+                    .map((project) => (
+                        <Project key={project.id} project={project} />
+                    ))}
             </div>
         </section>
     )

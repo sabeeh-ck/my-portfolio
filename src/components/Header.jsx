@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Icon } from '@iconify/react'
 
 export default function Header({ darkMode, setDarkMode }) {
     const [nav, setNav] = useState(false)
@@ -17,12 +18,16 @@ export default function Header({ darkMode, setDarkMode }) {
         {
             name: 'Toggle Theme',
             onClick: toggleDarkMode,
-            icon: darkMode ? 'light_mode' : 'dark_mode',
+            icon: darkMode
+                ? 'material-symbols:light-mode-outline-rounded'
+                : 'material-symbols:dark-mode-outline-rounded',
         },
         {
             name: 'Open Menu',
             onClick: toggleNav,
-            icon: nav ? 'chevron_line_up' : 'apps',
+            icon: nav
+                ? 'material-symbols:chevron-line-up-rounded'
+                : 'material-symbols:apps',
         },
     ]
 
@@ -33,10 +38,15 @@ export default function Header({ darkMode, setDarkMode }) {
         { name: 'Connect', href: '#contact' },
     ]
 
+    const headerGradient =
+        'bg-[linear-gradient(to_top,transparent_0%,color-mix(in_srgb,var(--color-bg)_70%,transparent)_20%,var(--color-bg)_50%)]'
+
     return (
         <>
             <header className="fixed inset-x-0 top-0 z-500 flex flex-col items-center">
-                <section className="fixed z-500 flex w-full max-w-200 items-center bg-[linear-gradient(to_top,transparent_0%,color-mix(in_srgb,var(--color-bg)_70%,transparent)_20%,var(--color-bg)_50%)] px-3 py-3 lg:mx-auto lg:px-0">
+                <section
+                    className={`fixed z-500 flex w-full max-w-200 items-center ${headerGradient} px-2 py-3 md:px-8 lg:mx-auto lg:px-0`}
+                >
                     <section className="flex-1">
                         <a
                             className="px-4 text-sm font-bold md:text-base lg:text-lg"
@@ -53,9 +63,7 @@ export default function Header({ darkMode, setDarkMode }) {
                                 className="flex h-12 w-12 cursor-pointer items-center justify-center border-0"
                                 onClick={button.onClick}
                             >
-                                <span className="material-symbols-rounded">
-                                    {button.icon}
-                                </span>
+                                <Icon icon={button.icon} width={24} />
                             </button>
                         ))}
                     </section>

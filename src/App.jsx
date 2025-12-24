@@ -25,7 +25,7 @@ function App() {
     return (
         <>
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-            <main className="mx-6 mt-18 mb-6 flex max-w-3xl flex-col gap-8 md:mx-12 lg:mx-auto">
+            <main className="mx-6 mt-18 mb-6 flex flex-col gap-8 md:mx-auto md:max-w-2xl lg:mx-auto lg:max-w-3xl">
                 <Hero />
                 <About />
                 <Skills />

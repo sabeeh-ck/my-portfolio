@@ -1,22 +1,39 @@
+import { Icon } from '@iconify/react'
+
 export default function Skills() {
     const skills = {
-        frontend: ['HTML 5', 'CSS 3', 'Tailwind CSS', 'JavaScript', 'React'],
-        backend: ['Java', 'Python', 'MySQL'],
-        tools: ['Git', 'GitHub', 'npm', 'Figma', 'Vercel'],
+        frontend: [
+            { name: 'HTML 5', icon: 'logos:html-5' },
+            { name: 'CSS 3', icon: 'logos:css-3' },
+            { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+            { name: 'JavaScript', icon: 'logos:javascript' },
+            { name: 'React', icon: 'logos:react' },
+        ],
+        backend: [
+            { name: 'Java', icon: 'logos:java' },
+            { name: 'Python', icon: 'logos:python' },
+            { name: 'MySQL', icon: 'logos:mysql-icon' },
+            { name: 'Firebase', icon: 'logos:firebase-icon' },
+            { name: 'Cloudinary', icon: 'logos:cloudinary-icon' },
+        ],
+        tools: [
+            { name: 'Git', icon: 'logos:git-icon' },
+            { name: 'GitHub', icon: 'bxl:github' },
+            { name: 'npm', icon: 'logos:npm-icon' },
+            { name: 'Vite', icon: 'logos:vitejs' },
+            { name: 'Figma', icon: 'logos:figma' },
+            { name: 'Vercel', icon: 'logos:vercel-icon' },
+        ],
     }
 
     const generateSkillIcons = (group) =>
         skills[group].map((skill) => (
             <div
-                key={skill}
+                key={skill.name}
                 className="border-border bg-surface flex items-center gap-2 rounded-lg border px-4 py-2 text-xs font-semibold md:text-sm lg:text-sm"
             >
-                <img
-                    width={16}
-                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.replace(/\s+/g, '').toLowerCase()}/${skill.replace(/\s+/g, '').toLowerCase()}-original.svg`}
-                    alt={skill}
-                />
-                <span>{skill}</span>
+                <Icon icon={skill.icon} width={16} height={16} />
+                <span>{skill.name}</span>
             </div>
         ))
 
@@ -30,7 +47,7 @@ export default function Skills() {
                 </div>
             </section>
             <section className="flex flex-col gap-2">
-                <h3>Backend</h3>
+                <h3>Backend / Data</h3>
                 <div className="flex flex-wrap gap-3">
                     {generateSkillIcons('backend')}
                 </div>

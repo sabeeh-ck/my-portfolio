@@ -1,21 +1,30 @@
 export const projects = [
     {
         id: 1,
-        title: 'Portfolio Website',
+        title: 'Personal Portfolio',
+        link: '',
         img: '',
+        technologies: ['react', 'tailwind', 'vite'],
         description:
             'A personal portfolio website to showcase my projects and skills.',
         links: {
             github: '',
-            live: '',
         },
+        status: 'done',
+        order: 2,
     },
     {
         id: 2,
-        title: '',
+        title: 'toj-menshub',
+        link: false,
         img: '',
+        technologies: ['react', 'firestore', 'cloudinary'],
         description:
             'A personal portfolio website to showcase my projects and skills.',
-        link: '',
+        links: {
+            github: '',
+        },
+        status: 'wip',
+        order: 1,
     },
 ]
