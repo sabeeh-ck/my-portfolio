@@ -1,3 +1,5 @@
+import { Icon } from '@iconify/react'
+
 export default function Hero() {
     return (
         <section
@@ -19,8 +21,13 @@ export default function Hero() {
                 >
                     View Projects
                 </a>
-                <a className="border-resume button text-resume border p-2">
-                    ↓ Resume
+                <a className="border-resume button text-resume inline-flex items-center gap-1 border p-2">
+                    <Icon
+                        height={16}
+                        width={18}
+                        icon="material-symbols:download-rounded"
+                    />
+                    Resume
                 </a>
             </div>
         </section>

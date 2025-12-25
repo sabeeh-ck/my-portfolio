@@ -18,11 +18,11 @@ export default function Skills() {
         ],
         tools: [
             { name: 'Git', icon: 'logos:git-icon' },
-            { name: 'GitHub', icon: 'bxl:github' },
+            { name: 'GitHub', icon: 'simple-icons:github' },
             { name: 'npm', icon: 'logos:npm-icon' },
             { name: 'Vite', icon: 'logos:vitejs' },
             { name: 'Figma', icon: 'logos:figma' },
-            { name: 'Vercel', icon: 'logos:vercel-icon' },
+            { name: 'Vercel', icon: 'simple-icons:vercel' },
         ],
     }
 

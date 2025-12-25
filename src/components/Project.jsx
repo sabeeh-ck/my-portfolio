@@ -2,21 +2,6 @@ import { Icon } from '@iconify/react'
 
 export default function Project({ project }) {
     const techs = {
-        html: {
-            name: 'html',
-            logo: '',
-            colour: ['text-[#F06529]', 'bg-[#4F1E0B]'],
-        },
-        css: {
-            name: 'css',
-            logo: '',
-            colour: ['text-[#3C99DC]', 'bg-[#152952]'],
-        },
-        javascript: {
-            name: 'javascript',
-            logo: '',
-            colour: ['text-[#F7DF1E]', 'bg-[#323330]'],
-        },
         tailwind: {
             name: 'tailwind',
             logo: 'simple-icons:tailwindcss',
@@ -47,11 +32,12 @@ export default function Project({ project }) {
     return (
         <article className="border-border bg-surface flex flex-col gap-2 rounded-lg border p-4">
             <div className="flex items-center gap-2">
-                <h3 className="flex items-center">
+                <h3 className="flex w-full items-center justify-between">
                     {project.title}
                     {project.status === 'wip' && (
-                        <span className="ml-2 rounded-full bg-green-800 px-2 py-1 text-[10px] text-white">
-                            wip
+                        <span className="inline-flex items-center gap-1 rounded-full bg-yellow-500/10 px-2 py-0.5 text-[10px] font-bold text-yellow-400">
+                            <Icon icon="material-symbols:handyman" />
+                            WIP
                         </span>
                     )}
                 </h3>

@@ -80,8 +80,13 @@ export default function Header({ darkMode, setDarkMode }) {
                             </li>
                         ))}
                     </ul>
-                    <button className="bg-resume button text-bg p-2 text-sm font-semibold">
-                        ↓ Resume
+                    <button className="bg-resume button text-bg inline-flex items-center gap-1 p-2 text-sm font-semibold">
+                        <Icon
+                            height={18}
+                            width={18}
+                            icon="material-symbols:download-rounded"
+                        />
+                        Resume
                     </button>
                 </nav>
             </header>
