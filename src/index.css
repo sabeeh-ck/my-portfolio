@@ -13,6 +13,11 @@
     --color-about: #f5a623;
     --color-about: #50e3c2;
     --color-about: #0cce6a;
+    --color-wip-bg: #fef9c2cc;
+    --color-wip-text: #894b00;
+    --color-about: #0cce6a;
+    --color-client-bg: #eef2ff;
+    --color-client-text: #3730a3;
 }
 
 .dark {
@@ -23,6 +28,10 @@
     --color-textmute: #a1a1a1;
     --color-text: #ededed;
     --color-resume: #b22222;
+    --color-wip-bg: #894b001a;
+    --color-wip-text: #fdc700;
+    --color-client-bg: #1e1b4b;
+    --color-client-text: #a5b4fc;
 }
 
 * {

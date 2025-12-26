@@ -32,10 +32,10 @@ export default function Header({ darkMode, setDarkMode }) {
     ]
 
     const navLinks = [
-        { name: 'About', href: '#about' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Connect', href: '#contact' },
+        { name: 'About', href: '/#about' },
+        { name: 'Skills', href: '/#skills' },
+        { name: 'Projects', href: '/#projects' },
+        { name: 'Connect', href: '/#contact' },
     ]
 
     const headerGradient =
@@ -47,16 +47,16 @@ export default function Header({ darkMode, setDarkMode }) {
                 <section
                     className={`fixed z-500 flex w-full max-w-200 items-center ${headerGradient} px-2 py-3 md:px-8 lg:mx-auto lg:px-0`}
                 >
-                    <section className="flex-1">
+                    <div className="flex-1">
                         <a
                             className="px-4 text-sm font-bold md:text-base lg:text-lg"
-                            href="#"
+                            href="/#"
                             onClick={closeNav}
                         >
                             @sabeeh-ck
                         </a>
-                    </section>
-                    <section className="flex gap-2">
+                    </div>
+                    <div className="flex gap-2">
                         {headerButtons.map((button) => (
                             <button
                                 key={button.name}
@@ -66,10 +66,10 @@ export default function Header({ darkMode, setDarkMode }) {
                                 <Icon icon={button.icon} width={24} />
                             </button>
                         ))}
-                    </section>
+                    </div>
                 </section>
                 <nav
-                    className={`bg-bg transition-top fixed z-350 flex h-full w-full max-w-175 flex-col items-start justify-center gap-6 px-6 duration-500 ease-in-out ${nav ? 'translate-y-0' : '-translate-y-full'} `}
+                    className={`bg-bg transition-top fixed z-350 flex h-full w-full max-w-200 flex-col items-start justify-center gap-6 px-6 duration-500 ease-in-out ${nav ? 'translate-y-0' : '-translate-y-full'} `}
                 >
                     <ul className="flex w-full flex-col gap-5 text-4xl font-bold">
                         {navLinks.map((link) => (
@@ -80,7 +80,7 @@ export default function Header({ darkMode, setDarkMode }) {
                             </li>
                         ))}
                     </ul>
-                    <button className="bg-resume button text-bg inline-flex items-center gap-1 p-2 text-sm font-semibold">
+                    <button className="bg-resume hover:bg-resume/80 button text-bg inline-flex items-center gap-1 p-2 text-sm font-semibold">
                         <Icon
                             height={18}
                             width={18}

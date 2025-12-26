@@ -16,12 +16,12 @@ export default function Hero() {
             </div>
             <div className="flex gap-4 text-xs font-bold md:text-sm">
                 <a
-                    className="button bg-text focus:bg-textmute text-bg p-2"
+                    className="button bg-text focus:bg-textmute hover:bg-text/80 text-bg p-2"
                     href="#projects"
                 >
                     View Projects
                 </a>
-                <a className="border-resume button text-resume inline-flex items-center gap-1 border p-2">
+                <a className="border-resume hover:bg-resume/10 button text-resume inline-flex items-center gap-1 border p-2">
                     <Icon
                         height={16}
                         width={18}

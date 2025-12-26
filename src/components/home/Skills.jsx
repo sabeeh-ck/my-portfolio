@@ -3,16 +3,20 @@ import { Icon } from '@iconify/react'
 export default function Skills() {
     const skills = {
         frontend: [
-            { name: 'HTML 5', icon: 'logos:html-5' },
-            { name: 'CSS 3', icon: 'logos:css-3' },
+            { name: 'HTML 5', icon: 'devicon:html5' },
+            { name: 'CSS 3', icon: 'devicon:css3' },
             { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
             { name: 'JavaScript', icon: 'logos:javascript' },
             { name: 'React', icon: 'logos:react' },
+            {
+                name: 'React Router',
+                icon: 'logos:react-router',
+            },
         ],
         backend: [
-            { name: 'Java', icon: 'logos:java' },
+            { name: 'Java', icon: 'devicon:java' },
             { name: 'Python', icon: 'logos:python' },
-            { name: 'MySQL', icon: 'logos:mysql-icon' },
+            { name: 'MySQL', icon: 'devicon:mysql' },
             { name: 'Firebase', icon: 'logos:firebase-icon' },
             { name: 'Cloudinary', icon: 'logos:cloudinary-icon' },
         ],
@@ -30,7 +34,9 @@ export default function Skills() {
         skills[group].map((skill) => (
             <div
                 key={skill.name}
-                className="border-border bg-surface flex items-center gap-2 rounded-lg border px-4 py-2 text-xs font-semibold md:text-sm lg:text-sm"
+                className="border-border bg-surface flex cursor-default items-center gap-2 rounded-lg border px-4 py-2 text-xs font-semibold md:text-sm lg:text-sm"
+                aria-label={skill.name}
+                title={skill.name}
             >
                 <Icon icon={skill.icon} width={16} height={16} />
                 <span>{skill.name}</span>

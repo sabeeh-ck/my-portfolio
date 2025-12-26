@@ -1,4 +1,4 @@
-import vjecLogo from '../assets/vjecLogo.svg'
+import vjecLogo from '../../assets/vjecLogo.svg'
 
 export default function About() {
     return (

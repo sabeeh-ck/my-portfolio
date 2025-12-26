@@ -1,5 +1,5 @@
-import Project from './Project'
-import { projects } from '../data/projects'
+import ProjectCard from './ProjectCard'
+import { projects } from '../../data/projects'
 
 export default function ProjectSection() {
     // const projectList = [1, 2, 3, 4, 5]
@@ -11,7 +11,7 @@ export default function ProjectSection() {
                 {projects
                     .sort((a, b) => a.order - b.order)
                     .map((project) => (
-                        <Project key={project.id} project={project} />
+                        <ProjectCard key={project.id} project={project} />
                     ))}
             </div>
         </section>
