@@ -67,9 +67,11 @@ export default function ProjectCard({ project }) {
             <div className="flex flex-wrap items-center gap-1">
                 <Link
                     className={
-                        project.page ? 'hover:underline' : 'cursor-default'
+                        project.page
+                            ? 'hover:text-text/70 underline'
+                            : 'cursor-default'
                     }
-                    to={project.page ? `/project/${project.slug}` : ''}
+                    to={project.page ? `/projects/${project.slug}` : ''}
                 >
                     <h3>{project.title}</h3>
                 </Link>
@@ -99,7 +101,7 @@ export default function ProjectCard({ project }) {
                 </small>
             </div>
             <ul className="flex gap-1 text-sm md:text-base">
-                {project.technologies.map((tech) => {
+                {project.techStack.map((tech) => {
                     const t = techs[tech]
                     return (
                         <div
@@ -119,7 +121,10 @@ export default function ProjectCard({ project }) {
                     title="Client commisioned work"
                     aria-label="client commisioned work"
                 >
-                    <Icon icon="material-symbols:deployed-code-outline" />
+                    <Icon
+                        width={16}
+                        icon="material-symbols:deployed-code-outline"
+                    />
                     Client Project
                 </span>
             )}

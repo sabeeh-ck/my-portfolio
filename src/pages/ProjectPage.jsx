@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { projects } from '../data/projects'
+import Hero from '../components/project/Hero'
 
 export default function ProjectPage() {
     const { slug } = useParams()
@@ -9,8 +10,11 @@ export default function ProjectPage() {
 
     return (
         <>
-            <h1>{project.title}</h1>
-            <p>{project.description}</p>
+            <Hero
+                title={project.title}
+                tagline={project.tagline}
+                description={project.description}
+            />
         </>
     )
 }
