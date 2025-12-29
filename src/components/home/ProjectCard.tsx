@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { techs } from '../../data/techs'
+import type { Project } from '../../types'
 
-export default function ProjectCard({ project }) {
+type ProjectCardProps = { project: Project }
+
+export default function ProjectCard({ project }: ProjectCardProps) {
     const startDate = new Date(project.startDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',

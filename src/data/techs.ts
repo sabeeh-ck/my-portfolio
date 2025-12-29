@@ -1,4 +1,10 @@
-export const techs = {
+export type Tech = {
+    name: string
+    logo: string
+    colour: [string, string]
+}
+
+export const techs: Record<string, Tech> = {
     javascript: {
         name: 'Javascript',
         logo: 'material-symbols:javascript-rounded',

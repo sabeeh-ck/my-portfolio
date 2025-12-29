@@ -1,4 +1,8 @@
-export default function Hero({ title, tagline, description }) {
+import type { Project } from '../../types'
+
+type HeroProps = Pick<Project, 'title' | 'tagline' | 'description'>
+
+export default function Hero({ title, tagline, description }: HeroProps) {
     return (
         <section className="flex flex-col gap-2">
             <h1 className="mt-20 uppercase">{title}</h1>

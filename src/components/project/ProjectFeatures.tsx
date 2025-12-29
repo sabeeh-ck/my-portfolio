@@ -1,4 +1,8 @@
-export default function Features({ features }) {
+import type { Project } from '../../types'
+
+type FeaturesProps = Pick<Project, 'features'>
+
+export default function Features({ features }: FeaturesProps) {
     return (
         <section>
             <h2>Features</h2>

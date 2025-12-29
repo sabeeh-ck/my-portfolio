@@ -1,7 +1,14 @@
 import { Icon } from '@iconify/react'
 
+type Skill = {
+    name: string
+    icon: string
+}
+
+type SkillGroup = 'frontend' | 'backend' | 'tools'
+
 export default function Skills() {
-    const skills = {
+    const skills: Record<SkillGroup, Skill[]> = {
         frontend: [
             { name: 'HTML 5', icon: 'devicon:html5' },
             { name: 'CSS 3', icon: 'devicon:css3' },
@@ -30,8 +37,8 @@ export default function Skills() {
         ],
     }
 
-    const generateSkillIcons = (group) =>
-        skills[group].map((skill) => (
+    const generateSkillIcons = (group: SkillGroup) =>
+        skills[group].map((skill: Skill) => (
             <div
                 key={skill.name}
                 className="border-border bg-surface flex cursor-default items-center gap-2 rounded-lg border px-4 py-2 text-xs font-semibold md:text-sm lg:text-sm"

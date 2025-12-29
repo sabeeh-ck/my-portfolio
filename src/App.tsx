@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Layout from './layouts/Layout'
+import Layout from './layouts/Layout.js'
 
-import ProjectPage from './pages/ProjectPage'
-import NotFound from './pages/NotFoundPage'
-import HomePage from './pages/HomePage'
+import ProjectPage from './pages/ProjectPage.js'
+import NotFound from './pages/NotFoundPage.js'
+import HomePage from './pages/HomePage.js'
 
 function App() {
     return (
