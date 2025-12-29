@@ -14,6 +14,7 @@ export default function Skills() {
             { name: 'CSS 3', icon: 'devicon:css3' },
             { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
             { name: 'JavaScript', icon: 'logos:javascript' },
+            { name: 'TypeScript', icon: 'logos:typescript-icon' },
             { name: 'React', icon: 'logos:react' },
             {
                 name: 'React Router',
