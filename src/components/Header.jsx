@@ -71,7 +71,7 @@ export default function Header({ darkMode, setDarkMode }) {
                 <nav
                     className={`bg-bg transition-top fixed z-350 flex h-full w-full max-w-200 flex-col items-start justify-center gap-6 px-6 duration-500 ease-in-out ${nav ? 'translate-y-0' : '-translate-y-full'} `}
                 >
-                    <ul className="flex w-full flex-col gap-5 text-4xl font-bold">
+                    <ul className="flex w-full flex-col gap-5 text-6xl font-bold">
                         {navLinks.map((link) => (
                             <li key={link.name} className="cursor-pointer">
                                 <a href={link.href} onClick={closeNav}>
