@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import { techs } from '../../data/techs'
 import type { Project } from '../../types'
+import ActionButton from './ActionButton'
+import TechPill from './TechPill'
 
 type ProjectCardProps = { project: Project }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+const ProjectCard = ({ project }: ProjectCardProps) => {
     const startDate = new Date(project.startDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
@@ -31,6 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         />
                     )}
                 </Link>
+
                 {project.status === 'wip' && (
                     <span
                         className="bg-wip-bg text-wip-text ml-auto flex cursor-default items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold md:text-sm"
@@ -41,6 +43,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         WIP
                     </span>
                 )}
+
                 <small className="text-textmute w-full font-bold">
                     {startDate}
                     {startDate !== endDate
@@ -50,23 +53,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         : ''}
                 </small>
             </div>
+
             <ul className="flex gap-1 text-sm md:text-base">
-                {project.techStack.map((tech) => {
-                    if (techs?.[tech]) {
-                        const t = techs[tech]
-                        return (
-                            <div
-                                key={t.name}
-                                className={`flex items-center rounded-full p-1.5 ${t.colour[0]} ${t.colour[1]}`}
-                            >
-                                <li title={t.name} aria-label={t.name}>
-                                    <Icon width={14} icon={t.logo} />
-                                </li>
-                            </div>
-                        )
-                    }
-                })}
+                {project.techStack.map((tech) => (
+                    <TechPill key={tech} tech={tech} />
+                ))}
             </ul>
+
             {project.type === 'freelance' && (
                 <span
                     className="bg-client-bg text-client-text flex cursor-default items-center gap-1 self-start rounded-full px-2 py-0.5 text-xs font-bold md:text-sm"
@@ -88,37 +81,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {project.description}
                 </p>
             </div>
-            <div className="flex gap-2 self-start text-xs font-semibold md:text-sm">
+            <div className="flex gap-2 self-start">
                 {project.link && (
-                    <a
-                        className={`border-border bg-text text-bg hover:bg-text/80 flex items-center gap-1 rounded-lg border px-3 py-2`}
+                    <ActionButton
+                        variant="visit"
+                        icon="material-symbols:rocket-launch-rounded"
                         href={project.link}
-                        target="_blank"
-                    >
-                        {' '}
-                        <Icon
-                            width={16}
-                            icon="material-symbols:rocket-launch-rounded"
-                        />{' '}
-                        Visit Site{' '}
-                    </a>
+                    />
                 )}
-                {project.repoUrl ? (
-                    <a
-                        className="border-text hover:bg-text/10 flex items-center gap-1 rounded-lg border px-3 py-2"
-                        href={project.repoUrl}
-                        target="_blank"
-                    >
-                        <Icon icon="simple-icons:github" />
-                        View Code
-                    </a>
-                ) : (
-                    <span className="text-textmute bg-border border-border flex cursor-default items-center gap-1 rounded-lg border px-3 py-2">
-                        <Icon icon="simple-icons:github" />
-                        Private Repo
-                    </span>
-                )}
+
+                <ActionButton
+                    variant={project.repoUrl ? 'repo' : 'private'}
+                    icon="simple-icons:github"
+                    href={project.repoUrl ?? undefined}
+                />
             </div>
         </article>
     )
 }
+
+export default ProjectCard

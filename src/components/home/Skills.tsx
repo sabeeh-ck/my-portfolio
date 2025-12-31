@@ -5,10 +5,8 @@ type Skill = {
     icon: string
 }
 
-type SkillGroup = 'frontend' | 'backend' | 'tools'
-
 export default function Skills() {
-    const skills: Record<SkillGroup, Skill[]> = {
+    const skills = {
         frontend: [
             { name: 'HTML 5', icon: 'devicon:html5' },
             { name: 'CSS 3', icon: 'devicon:css3' },
@@ -36,10 +34,12 @@ export default function Skills() {
             { name: 'Figma', icon: 'logos:figma' },
             { name: 'Vercel', icon: 'simple-icons:vercel' },
         ],
-    }
+    } satisfies Record<string, Skill[]>
+
+    type SkillGroup = keyof typeof skills
 
     const generateSkillIcons = (group: SkillGroup) =>
-        skills[group].map((skill: Skill) => (
+        skills[group].map((skill) => (
             <div
                 key={skill.name}
                 className="border-border bg-surface flex cursor-default items-center gap-2 rounded-lg border px-4 py-2 text-xs font-semibold md:text-sm lg:text-sm"

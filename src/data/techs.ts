@@ -1,10 +1,4 @@
-export type Tech = {
-    name: string
-    logo: string
-    colour: [string, string]
-}
-
-export const techs: Record<string, Tech> = {
+export const techs = {
     javascript: {
         name: 'Javascript',
         logo: 'material-symbols:javascript-rounded',
@@ -61,3 +55,5 @@ export const techs: Record<string, Tech> = {
         colour: ['text-[#00758F]', 'bg-[#0A1C25]'],
     },
 }
+
+export type TechKey = keyof typeof techs

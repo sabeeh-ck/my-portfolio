@@ -98,7 +98,7 @@ export const projects: Project[] = [
         images: [],
         challenges: [],
         improvements: [],
-        repoUrl: false,
+        repoUrl: undefined,
         status: 'wip',
         order: 1,
     },

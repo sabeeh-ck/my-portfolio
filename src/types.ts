@@ -1,3 +1,5 @@
+import type { TechKey } from './data/techs'
+
 export type FeatureModule = {
     title: string
     items: string[]
@@ -13,12 +15,12 @@ export type Project = {
     slug: string
     link: string
     type: string
-    techStack: string[]
+    techStack: TechKey[]
     features: Record<string, FeatureModule>
     images: string[]
     challenges: string[]
     improvements: string[]
-    repoUrl: string | false
+    repoUrl: string | undefined
     status: 'done' | 'wip'
     order: number
 }

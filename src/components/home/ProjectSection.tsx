@@ -1,7 +1,7 @@
 import ProjectCard from './ProjectCard'
 import { projects } from '../../data/projects'
 
-export default function ProjectSection() {
+const ProjectSection = () => {
     return (
         <section id="projects" className="flex scroll-mt-20 flex-col">
             <h2 className="mb-4">Projects</h2>
@@ -15,3 +15,5 @@ export default function ProjectSection() {
         </section>
     )
 }
+
+export default ProjectSection
