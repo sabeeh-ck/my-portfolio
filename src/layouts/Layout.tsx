@@ -3,13 +3,10 @@ import Header from '../components/Header.js'
 import Footer from '../components/Footer.js'
 import { Outlet } from 'react-router-dom'
 
-export default function Layout() {
-    const [darkMode, setDarkMode] = useState(false)
+const Layout = () => {
+    const [darkMode, setDarkMode] = useState(true)
 
-    useEffect(() => {
-        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        setDarkMode(preferredTheme.matches)
-    }, [])
+    // useEffect(() => { const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)') setDarkMode(preferredTheme.matches) }, [])
 
     useEffect(() => {
         darkMode
@@ -27,3 +24,5 @@ export default function Layout() {
         </div>
     )
 }
+
+export default Layout

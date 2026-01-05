@@ -60,7 +60,7 @@ export const projects: Project[] = [
             "A responsive menswear shop website with product listings and filters. Admins can manage products and upload images via Firebase and Cloudinary. Customers can place orders directly through shop's WhatsApp link, creating a smooth shopping experience.",
         startDate: '2025-11',
         endDate: '...',
-        slug: '',
+        slug: 'toj-menshub',
         link: 'https://toj-menshub-demo.vercel.app',
         type: 'freelance',
         techStack: ['react', 'reactrouter', 'firestore', 'cloudinary'],

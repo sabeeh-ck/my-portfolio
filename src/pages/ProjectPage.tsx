@@ -3,7 +3,7 @@ import { projects } from '../data/projects.js'
 import Hero from '../components/project/ProjectHero.js'
 import Features from '../components/project/ProjectFeatures.js'
 
-export default function ProjectPage() {
+const ProjectPage = () => {
     const { slug } = useParams()
     const project = projects.find((p) => p.slug === slug)
 
@@ -20,3 +20,5 @@ export default function ProjectPage() {
         </>
     )
 }
+
+export default ProjectPage

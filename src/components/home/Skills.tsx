@@ -5,7 +5,7 @@ type Skill = {
     icon: string
 }
 
-export default function Skills() {
+const Skills = () => {
     const skills = {
         frontend: [
             { name: 'HTML 5', icon: 'devicon:html5' },
@@ -75,3 +75,5 @@ export default function Skills() {
         </section>
     )
 }
+
+export default Skills

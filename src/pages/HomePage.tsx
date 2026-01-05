@@ -6,14 +6,14 @@ import {
     Contact,
 } from '../components/home/homeIndex'
 
-export default function HomePage() {
-    return (
-        <>
-            <Hero />
-            <About />
-            <Skills />
-            <ProjectSection />
-            <Contact />
-        </>
-    )
-}
+const HomePage = () => (
+    <>
+        <Hero />
+        <About />
+        <Skills />
+        <ProjectSection />
+        <Contact />
+    </>
+)
+
+export default HomePage

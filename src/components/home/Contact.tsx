@@ -24,7 +24,7 @@ export default function Contact() {
                         <dd className="text-textmute text-sm font-semibold md:text-base">
                             <a
                                 href={social.url}
-                                className="hover:underline"
+                                className="underline decoration-dotted hover:underline hover:decoration-solid"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

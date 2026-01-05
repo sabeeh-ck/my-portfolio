@@ -4,9 +4,9 @@ import type { Project } from '../../types'
 import ActionButton from './ActionButton'
 import TechPill from './TechPill'
 
-type ProjectCardProps = { project: Project }
+type Props = { project: Project }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project }: Props) => {
     const startDate = new Date(project.startDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
@@ -20,18 +20,20 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     return (
         <article className="border-border bg-surface flex flex-col gap-2 rounded-lg border p-4">
             <div className="flex flex-wrap items-center gap-1">
-                <Link
-                    className={`${project.slug ? 'hover:text-text/70 underline' : 'cursor-default'} flex items-center gap-1`}
-                    to={project.slug ? `/projects/${project.slug}` : ''}
-                >
-                    <h3>{project.title}</h3>
-                    {project.slug && (
+                {project.slug ? (
+                    <Link
+                        className="decoration-textmute flex items-center gap-1 underline decoration-dotted hover:decoration-solid"
+                        to={`/projects/${project.slug}`}
+                    >
+                        <h3>{project.title}</h3>
                         <Icon
                             icon="material-symbols:open-in-new-rounded"
                             width={14}
                         />
-                    )}
-                </Link>
+                    </Link>
+                ) : (
+                    <h3>{project.title}</h3>
+                )}
 
                 {project.status === 'wip' && (
                     <span
