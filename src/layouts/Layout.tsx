@@ -16,7 +16,10 @@ const Layout = () => {
 
     return (
         <div className="flex min-h-screen flex-col">
-            <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+            <Header
+                darkMode={darkMode}
+                toggleDarkMode={() => setDarkMode((prev) => !prev)}
+            />
             <main className="mx-6 mt-18 mb-6 flex flex-1 flex-col gap-8 md:mx-auto md:max-w-2xl lg:mx-auto lg:max-w-3xl">
                 <Outlet />
             </main>

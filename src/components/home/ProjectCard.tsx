@@ -95,7 +95,7 @@ const ProjectCard = ({ project }: Props) => {
                 <ActionButton
                     variant={project.repoUrl ? 'repo' : 'private'}
                     icon="simple-icons:github"
-                    href={project.repoUrl ?? undefined}
+                    href={project.repoUrl}
                 />
             </div>
         </article>

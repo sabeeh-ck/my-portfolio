@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 type ActionButtonProp = {
     variant: 'visit' | 'repo' | 'private'
     icon: string
-    href?: string
+    href: string | undefined
 }
 
 const ActionButton = ({ icon, href, variant }: ActionButtonProp) => {

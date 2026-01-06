@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 
-export default function Header({ darkMode, setDarkMode }) {
+type HeaderProps = {
+    darkMode: boolean
+    toggleDarkMode: () => void
+}
+
+export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
     const [nav, setNav] = useState(false)
 
     useEffect(() => {
@@ -10,7 +15,6 @@ export default function Header({ darkMode, setDarkMode }) {
             : document.body.classList.remove('overflow-hidden')
     }, [nav])
 
-    const toggleDarkMode = () => setDarkMode((prev) => !prev)
     const toggleNav = () => setNav(!nav)
     const closeNav = () => setNav(false)
 
