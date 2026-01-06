@@ -49,7 +49,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
         <>
             <header className="fixed inset-x-0 top-0 z-500 flex flex-col items-center">
                 <section
-                    className={`fixed z-500 flex w-full max-w-200 items-center ${headerGradient} px-2 py-3 md:px-8 lg:mx-auto lg:px-0`}
+                    className={`fixed z-500 flex w-full max-w-167.5 items-center ${headerGradient} px-2 py-3 md:px-0`}
                 >
                     <div className="flex-1">
                         <a
@@ -73,25 +73,29 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
                     </div>
                 </section>
                 <nav
-                    className={`bg-bg transition-top fixed z-350 flex h-full w-full max-w-200 flex-col items-start justify-center gap-6 px-6 duration-500 ease-in-out ${nav ? 'translate-y-0' : '-translate-y-full'} `}
+                    className={`bg-bg fixed z-350 h-full w-full max-w-2xl px-6 md:px-4 ${nav ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'} transition-opacity duration-500 ease-in-out`}
                 >
-                    <ul className="flex w-full flex-col gap-5 text-6xl font-bold">
-                        {navLinks.map((link) => (
-                            <li key={link.name} className="cursor-pointer">
-                                <a href={link.href} onClick={closeNav}>
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                    <button className="bg-resume hover:bg-resume/80 button text-bg inline-flex items-center gap-1 p-2 text-sm font-semibold">
-                        <Icon
-                            height={18}
-                            width={18}
-                            icon="material-symbols:download-rounded"
-                        />
-                        Resume
-                    </button>
+                    <div
+                        className={`flex h-full flex-col items-start justify-center gap-6 ${nav ? 'translate-y-0 delay-200' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}
+                    >
+                        <ul className="flex w-full flex-col gap-5 text-6xl font-semibold">
+                            {navLinks.map((link) => (
+                                <li key={link.name} className="cursor-pointer">
+                                    <a href={link.href} onClick={closeNav}>
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                        <button className="bg-resume hover:bg-resume/80 button text-bg inline-flex items-center gap-1 p-2 text-sm font-semibold">
+                            <Icon
+                                height={18}
+                                width={18}
+                                icon="material-symbols:download-rounded"
+                            />
+                            Resume
+                        </button>
+                    </div>
                 </nav>
             </header>
         </>

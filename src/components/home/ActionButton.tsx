@@ -11,7 +11,7 @@ const ActionButton = ({ icon, href, variant }: ActionButtonProp) => {
         'flex items-center gap-1 rounded-lg border px-3 py-2 text-xs font-semibold md:text-sm'
 
     const variantClasses = {
-        visit: 'hover:bg-text/80 border-text bg-text text-bg',
+        visit: 'hover:bg-text/80  bg-text text-bg',
         repo: 'border-text hover:bg-text/10',
         private: 'text-textmute bg-border border-border',
     }

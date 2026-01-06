@@ -83,7 +83,7 @@ const ProjectCard = ({ project }: Props) => {
                     {project.description}
                 </p>
             </div>
-            <div className="flex gap-2 self-start">
+            <div className="flex gap-3 self-start">
                 {project.link && (
                     <ActionButton
                         variant="visit"

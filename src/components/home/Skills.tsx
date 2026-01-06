@@ -52,21 +52,21 @@ const Skills = () => {
         ))
 
     return (
-        <section id="skills" className="flex scroll-mt-20 flex-col gap-4">
+        <section id="skills" className="flex scroll-mt-20 flex-col gap-6">
             <h2>Skills</h2>
-            <section className="flex flex-col gap-2">
+            <section className="flex flex-col gap-3">
                 <h3>Frontend</h3>
                 <div className="flex flex-wrap gap-3">
                     {generateSkillIcons('frontend')}
                 </div>
             </section>
-            <section className="flex flex-col gap-2">
+            <section className="flex flex-col gap-3">
                 <h3>Backend / Data</h3>
                 <div className="flex flex-wrap gap-3">
                     {generateSkillIcons('backend')}
                 </div>
             </section>
-            <section className="flex flex-col gap-2">
+            <section className="flex flex-col gap-3">
                 <h3>Tools & Workflow</h3>
                 <div className="flex flex-wrap gap-3">
                     {generateSkillIcons('tools')}

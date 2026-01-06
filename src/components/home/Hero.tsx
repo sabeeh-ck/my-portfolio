@@ -1,19 +1,20 @@
 import { Icon } from '@iconify/react'
 
 const Hero = () => (
-    <section
-        id="hero"
-        className="flex min-h-[65vh] flex-col justify-center gap-8"
-    >
-        <div>
+    <section id="hero" className="mt-40 flex flex-col justify-center gap-8">
+        <div className="flex flex-col gap-2">
             <h1>Muhammed Sabeeh C K</h1>
-            <p className="font-medium">Junior Web Developer and Designer</p>
-            <p className="text-textmute mt-2 text-sm font-semibold md:text-base">
-                I build responsive web applications using modern frontend and
-                backend technologies.
+            <p className="text-base font-medium">
+                Junior Web Developer and Designer
             </p>
+            <div className="text-textmute flex flex-col gap-2 text-sm font-semibold md:text-base">
+                <p>
+                    I build responsive web applications using modern frontend
+                    and backend technologies.
+                </p>
+            </div>
         </div>
-        <div className="flex gap-4 text-xs font-bold md:text-sm">
+        <div className="flex gap-4 text-xs font-semibold md:text-sm">
             <a
                 className="button bg-text focus:bg-textmute hover:bg-text/80 text-bg p-2"
                 href="#projects"
