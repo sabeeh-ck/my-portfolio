@@ -12,7 +12,7 @@ export const projects: Project[] = [
         slug: '',
         link: '#',
         type: 'personal',
-        techStack: ['react', 'tailwind', 'vite'],
+        techStack: ['react', 'tailwindcss', 'vite'],
         features: {
             admin: {
                 title: 'Admin Module',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
 
         repoUrl: 'https://github.com/sabeeh-ck/my-portfolio',
         status: 'done',
-        order: 3,
+        order: 4,
     },
     {
         id: 2,
@@ -60,10 +60,10 @@ export const projects: Project[] = [
             "A responsive menswear shop website with product listings and filters. Admins can manage products and upload images via Firebase and Cloudinary. Customers can place orders directly through shop's WhatsApp link, creating a smooth shopping experience.",
         startDate: '2025-11',
         endDate: '...',
-        slug: 'toj-menshub',
+        slug: '',
         link: 'https://toj-menshub-demo.vercel.app',
         type: 'freelance',
-        techStack: ['react', 'reactrouter', 'firestore', 'cloudinary'],
+        techStack: ['react', 'reactrouter', 'firebase', 'cloudinary'],
         features: {
             admin: {
                 title: 'Admin Module',
@@ -150,6 +150,56 @@ export const projects: Project[] = [
         improvements: [],
         repoUrl: 'https://github.com/sabeeh-ck/Early_warning',
         status: 'done',
+        order: 3,
+    },
+    {
+        id: 3,
+        title: 'MeetSlot',
+        tagline: 'Meeting Room Booking Web App',
+        description:
+            'Internal web application that allows company staffs to book meeting rooms, view availability in real time and prevent double bookings.',
+        startDate: '2026-02',
+        endDate: '...',
+        slug: '',
+        link: '',
+        type: 'academic',
+        techStack: ['react', 'tailwindcss', 'express', 'mongodb'],
+        features: {
+            admin: {
+                title: 'Admin Module',
+                items: [
+                    'Secure role-based login for authorized access',
+                    'Create and manage forest divisions and stations',
+                    'Add, update, and track animal species data',
+                    'Assign forest officers to divisions and stations',
+                    'View and respond to citizen-submitted complaints',
+                    'Send alerts and notifications to officers',
+                ],
+            },
+            officer: {
+                title: 'Officer Module',
+                items: [
+                    'Monitor animal detections with email alerts',
+                    'Manage and respond to public complaints',
+                    'View detection history and hotspot analysis',
+                ],
+            },
+            camera: {
+                title: 'Camera Module',
+                items: [
+                    'Accepts live and pre-recorded video input',
+                    'Extracts frames for animal detection',
+                    'Uses TensorFlow Inception v3 for species detection',
+                    'Acts as the primary data source for the system',
+                    'Supports continuous surveillance in forest zones',
+                ],
+            },
+        },
+        images: [],
+        challenges: [],
+        improvements: [],
+        repoUrl: 'https://github.com/sabeeh-ck/MeetSlot',
+        status: 'wip',
         order: 2,
     },
 ]

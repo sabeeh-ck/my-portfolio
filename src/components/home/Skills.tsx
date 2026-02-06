@@ -20,6 +20,9 @@ const Skills = () => {
             },
         ],
         backend: [
+            { name: 'Express.js', icon: 'simple-icons:express' },
+            { name: 'MongoDB', icon: 'logos:mongodb-icon' },
+            { name: 'Node.js', icon: 'logos:nodejs-icon-alt' },
             { name: 'Java', icon: 'devicon:java' },
             { name: 'Python', icon: 'logos:python' },
             { name: 'MySQL', icon: 'devicon:mysql' },

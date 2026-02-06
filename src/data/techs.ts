@@ -9,7 +9,7 @@ export const techs = {
         logo: 'devicon-plain:css3',
         colour: ['text-[#2965F1]', 'bg-[#0B1D4A]'],
     },
-    tailwind: {
+    tailwindcss: {
         name: 'Tailwind CSS',
         logo: 'simple-icons:tailwindcss',
         colour: ['text-[#38B2AC]', 'bg-[#0C2A29]'],
@@ -19,8 +19,8 @@ export const techs = {
         logo: 'simple-icons:react',
         colour: ['text-[#61DAFB]', 'bg-[#0F2A3B]'],
     },
-    firestore: {
-        name: 'Firestore',
+    firebase: {
+        name: 'Firebase',
         logo: 'simple-icons:firebase',
         colour: ['text-[#F6B21A]', 'bg-[#2A1E0A]'],
     },
@@ -53,6 +53,16 @@ export const techs = {
         name: 'MySQL',
         logo: 'lineicons:mysql',
         colour: ['text-[#00758F]', 'bg-[#0A1C25]'],
+    },
+    express: {
+        name: 'Express.js',
+        logo: 'simple-icons:express',
+        colour: ['text-[#BFBFBF]', 'bg-[#1F1F1F]'],
+    },
+    mongodb: {
+        name: 'MongoDB',
+        logo: 'simple-icons:mongodb',
+        colour: ['text-[#3FA037]', 'bg-[#0D1F0D]'],
     },
 }
 

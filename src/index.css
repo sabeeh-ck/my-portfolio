@@ -40,8 +40,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    @apply scroll-smooth;
 }
 
 body {
@@ -64,10 +64,14 @@ h3 {
     @apply cursor-pointer rounded-lg px-5 py-3;
 }
 
-.material-symbols-rounded {
+.hover-stretch {
+    transition: font-stretch 300ms ease;
+}
+
+.hover-stretch:hover {
     font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
+        'slnt' 0,
+        'wdth' 150,
         'GRAD' 0,
-        'opsz' 40;
+        'ROND' 0;
 }
