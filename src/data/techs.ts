@@ -1,3 +1,9 @@
+type tech = {
+    name: string
+    logo: string
+    colour: string[]
+}
+
 export const techs = {
     javascript: {
         name: 'Javascript',
@@ -64,6 +70,16 @@ export const techs = {
         logo: 'simple-icons:mongodb',
         colour: ['text-[#3FA037]', 'bg-[#0D1F0D]'],
     },
-}
+    nextjs: {
+        name: 'Next.js',
+        logo: 'devicon-plain:nextjs',
+        colour: ['text-[#F5F5F5]', 'bg-[#1F1F1F]'],
+    },
+    supabase: {
+        name: 'Supabase',
+        logo: 'devicon-plain:supabase',
+        colour: ['text-[#3ECF8E]', 'bg-[#0B1F17]'],
+    },
+} satisfies Record<string, tech>
 
 export type TechKey = keyof typeof techs

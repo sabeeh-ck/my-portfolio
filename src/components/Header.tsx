@@ -49,7 +49,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
         <>
             <header className="fixed inset-x-0 top-0 z-500 flex flex-col items-center">
                 <section
-                    className={`fixed z-500 flex w-full max-w-167.5 items-center ${headerGradient} px-2 py-3 md:px-0`}
+                    className={`fixed z-500 flex w-full max-w-4xl items-center px-2 py-3 md:px-0 ${headerGradient}`}
                 >
                     <div className="flex-1">
                         <a
@@ -73,7 +73,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
                     </div>
                 </section>
                 <nav
-                    className={`bg-bg fixed z-350 h-full w-full max-w-2xl px-6 md:px-4 ${nav ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'} transition-opacity duration-500 ease-in-out`}
+                    className={`bg-bg fixed z-350 h-full w-full max-w-4xl px-6 md:px-4 ${nav ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'} transition-opacity duration-500 ease-in-out`}
                 >
                     <div
                         className={`flex h-full flex-col items-start justify-center gap-6 ${nav ? 'translate-y-0 delay-200' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}

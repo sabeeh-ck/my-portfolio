@@ -20,7 +20,7 @@ const Layout = () => {
                 darkMode={darkMode}
                 toggleDarkMode={() => setDarkMode((prev) => !prev)}
             />
-            <main className="mx-6 mt-18 mb-6 flex max-w-screen-sm flex-1 flex-col gap-15 md:mx-auto">
+            <main className="mx-6 mt-18 mb-6 flex max-w-4xl flex-1 flex-col gap-15 md:mx-auto md:px-4">
                 <Outlet />
             </main>
             <Footer />

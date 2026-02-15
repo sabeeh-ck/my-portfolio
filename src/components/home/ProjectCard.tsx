@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import type { Project } from '../../types'
 import ActionButton from './ActionButton'
@@ -12,28 +11,20 @@ const ProjectCard = ({ project }: Props) => {
         month: 'short',
     })
 
-    const endDate = new Date(project.endDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-    })
+    const formattedEndDate =
+        project.status === 'wip'
+            ? '...'
+            : project.endDate
+              ? new Date(project.endDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                })
+              : null
 
     return (
-        <article className="border-border bg-surface flex flex-col gap-2 rounded-lg border p-4">
+        <article className="border-border bg-surface flex flex-col gap-3 rounded-lg border p-4">
             <div className="flex flex-wrap items-center gap-1">
-                {project.slug ? (
-                    <Link
-                        className="decoration-textmute flex items-center gap-1 underline decoration-dotted hover:decoration-solid"
-                        to={`/projects/${project.slug}`}
-                    >
-                        <h3>{project.title}</h3>
-                        <Icon
-                            icon="material-symbols:open-in-new-rounded"
-                            width={14}
-                        />
-                    </Link>
-                ) : (
-                    <h3>{project.title}</h3>
-                )}
+                <h3>{project.title}</h3>
 
                 {project.status === 'wip' && (
                     <span
@@ -48,15 +39,11 @@ const ProjectCard = ({ project }: Props) => {
 
                 <small className="text-textmute w-full font-bold">
                     {startDate}
-                    {startDate !== endDate
-                        ? endDate === 'Invalid Date'
-                            ? ' - ...'
-                            : ` - ${endDate}`
-                        : ''}
+                    {formattedEndDate && ` - ${formattedEndDate}`}
                 </small>
             </div>
 
-            <ul className="flex gap-1 text-sm md:text-base">
+            <ul className="flex gap-2 text-sm md:text-base">
                 {project.techStack.map((tech) => (
                     <TechPill key={tech} tech={tech} />
                 ))}
@@ -75,7 +62,7 @@ const ProjectCard = ({ project }: Props) => {
                     Client Project
                 </span>
             )}
-            <div className="flex-1">
+            <div className="flex flex-1 flex-col gap-1">
                 <h4 className="text-sm font-bold md:text-base">
                     {project.tagline}
                 </h4>
@@ -83,19 +70,19 @@ const ProjectCard = ({ project }: Props) => {
                     {project.description}
                 </p>
             </div>
-            <div className="flex gap-3 self-start">
-                {project.link && (
+            <div className="flex gap-2 self-start">
+                {project.liveUrl && (
                     <ActionButton
                         variant="visit"
                         icon="material-symbols:rocket-launch-rounded"
-                        href={project.link}
+                        href={project.liveUrl}
                     />
                 )}
 
                 <ActionButton
                     variant={project.repoUrl ? 'repo' : 'private'}
                     icon="simple-icons:github"
-                    href={project.repoUrl}
+                    href={project?.repoUrl}
                 />
             </div>
         </article>
