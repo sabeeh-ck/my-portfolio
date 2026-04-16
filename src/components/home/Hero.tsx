@@ -22,7 +22,7 @@ const Hero = () => (
                 View Projects
             </a>
             <a
-                href="public\assets\resume.pdf"
+                href="/assets/resume.pdf"
                 download="resume.pdf"
                 className="border-resume hover:bg-resume/10 button text-resume inline-flex items-center gap-1 border p-2"
             >
