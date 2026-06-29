@@ -1,11 +1,12 @@
 import { MouseEventHandler, ReactNode } from "react";
 import { Icon } from "./icons/Icon";
 import { IconName } from "./icons/iconPaths";
+import Link from "next/link";
 
 interface ButtonProps {
     title?: string;
     icon: IconName;
-    onClick: MouseEventHandler<HTMLButtonElement>;
+    onClick: string;
     "aria-label"?: string;
 }
 
@@ -16,14 +17,14 @@ const Button = ({
     "aria-label": ariaLabel,
 }: ButtonProps) => {
     return (
-        <button
+        <Link
             aria-label={ariaLabel}
             className="flex items-center gap-1 lg:gap-2"
-            onClick={onClick}
+            href={onClick}
         >
             <Icon name={icon} className="size-4 lg:size-6" />
             {title}
-        </button>
+        </Link>
     );
 };
 

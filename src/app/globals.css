@@ -12,7 +12,11 @@
     --font-stylised: var(--font-syne);
 }
 
-body {
+@utility layout-guide {
+    @apply grid grid-cols-5 gap-5 lg:grid-cols-12 lg:gap-6;
+}
+
+@utility body {
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans), Arial, Helvetica, sans-serif;
