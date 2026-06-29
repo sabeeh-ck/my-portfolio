@@ -7,7 +7,7 @@ const Hero = ({}: HeroProps) => {
         <>
             <section
                 id="hero"
-                className="flex h-dvh w-full flex-col justify-end px-6 pt-24 lg:px-16"
+                className="flex h-dvh w-full flex-col justify-end px-6 lg:px-16"
             >
                 <div id="hero-name" className="z-50 w-full py-8 lg:py-3">
                     <h1 className="text-[34px] leading-[100%] font-medium lg:text-8xl">
@@ -19,7 +19,7 @@ const Hero = ({}: HeroProps) => {
                 </div>
                 <div
                     id="hero-text"
-                    className="absolute inset-0 z-10 grid grid-cols-5 gap-6 px-6 pt-24 lg:grid-cols-12 lg:px-16"
+                    className="absolute inset-0 z-10 grid grid-cols-5 gap-6 px-6 pt-32 lg:grid-cols-12 lg:px-16 lg:pt-24"
                 >
                     <div className="col-span-4 col-start-2 text-sm lg:col-span-6 lg:col-start-8 lg:text-2xl">
                         <p>
