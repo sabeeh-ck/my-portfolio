@@ -3,79 +3,90 @@ import Button from "./Button";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { Flip, ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 interface HeroProps {}
 
-gsap.registerPlugin(ScrollTrigger, Flip);
+gsap.registerPlugin(useGSAP, ScrollTrigger, Flip);
 
 const Hero = ({}: HeroProps) => {
     const heroRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(
-        () => {
-            const heroSpan = document.querySelector(".moving-span");
-            const navSlot = document.querySelector(".nav-logo-slot");
+    useGSAP(() => {
+        const nameSpan = document.getElementById("second-name");
+        const navSlot = document.getElementById("nav");
+        const headerLinks = document.getElementById("header-links");
 
-            if (!heroSpan || !navSlot) return;
+        if (!nameSpan || !navSlot) return;
 
-            const state = Flip.getState(heroSpan);
-            navSlot.appendChild(heroSpan);
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: "top top",
+                end: "+=120%",
+                scrub: true,
+                pin: true,
+                pinSpacing: false,
+                markers: true,
+            },
+        });
 
+        const state = Flip.getState([nameSpan, headerLinks]);
+
+        const linkSeparator = document.createElement("p");
+        linkSeparator.className = "hidden opacity-0 lg:block";
+        linkSeparator.textContent = "/";
+
+        navSlot.prepend(nameSpan, linkSeparator);
+
+        tl.add(
             Flip.from(state, {
-                duration: 1,
-                ease: "power1.inOut",
                 scale: true,
-                scrollTrigger: {
-                    trigger: heroRef.current,
-                    start: "top top",
-                    end: "+=100%",
-                    scrub: true,
-                    pin: true,
-                },
-            });
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: heroRef.current,
-                    start: "top top",
-                    end: "+=100%",
-                    scrub: true,
-                    pin: true,
-                    markers: true,
-                },
-            });
-
-            tl.to("#hero-text", {
-                xPercent: 120,
-                opacity: 0,
+                props: "fontSize,lineHeight",
                 ease: "power1.inOut",
-                duration: 0.075,
-            });
+            }),
+            0,
+        );
 
-            tl.to(
+        tl.to(
+            linkSeparator,
+            {
+                opacity: 1,
+                ease: "power1.inOut",
+                duration: 0.5,
+            },
+            0.3,
+        )
+            .to(
                 "#first-name",
                 {
-                    yPercent: -50,
+                    yPercent: -65,
                     opacity: 0,
                     ease: "power1.inOut",
-                    duration: 0.025,
+                    duration: 0.15,
                 },
-                "<",
-            );
-
-            tl.to(
+                0,
+            )
+            .to(
                 ["#bottom-menu", "#bottom-line"],
                 {
-                    yPercent: 50,
+                    yPercent: 25,
                     opacity: 0,
                     ease: "power1.inOut",
-                    duration: 0.075,
+                    duration: 0.2,
                 },
-                "<",
+                0,
+            )
+            .to(
+                "#hero-text",
+                {
+                    xPercent: 25,
+                    opacity: 0,
+                    ease: "power1.inOut",
+                },
+                0,
             );
-        },
-        { scope: heroRef },
-    );
+    });
 
     return (
         <section
@@ -84,20 +95,23 @@ const Hero = ({}: HeroProps) => {
             className="relative flex h-dvh w-full flex-col justify-end px-6 lg:h-dvh lg:px-16"
         >
             <div id="hero-name" className="z-50 w-full py-8 lg:py-3">
-                <h1 className="text-[34px] leading-[100%] font-medium lg:text-8xl">
-                    <span id="first-name" className="inline-block">
+                <h1 className="text-[34px] leading-normal font-medium lg:text-9xl">
+                    <span
+                        id="first-name"
+                        className="mb-9 inline-block lg:mb-36 lg:text-8xl"
+                    >
                         Muhammed
                     </span>
                     <span
                         id="second-name"
-                        className="moving-span font-stylised inline-block text-[34px] font-extrabold lg:text-9xl"
+                        className="font-stylised inline-block font-extrabold"
                     >
-                        Sabeeh-ck.
+                        <Link href={"#"}>Sabeeh-ck.</Link>
                     </span>
                 </h1>
             </div>
 
-            <div className="absolute inset-0 z-10 grid grid-cols-5 gap-6 overflow-x-hidden px-6 lg:grid-cols-12 lg:px-16 lg:pt-24">
+            <div className="absolute inset-0 z-10 grid grid-cols-5 gap-6 overflow-x-hidden px-6 pt-32 lg:grid-cols-12 lg:px-16 lg:pt-24">
                 <div
                     id="hero-text"
                     className="col-span-4 col-start-2 text-sm lg:col-span-6 lg:col-start-7 lg:text-2xl"
@@ -113,7 +127,7 @@ const Hero = ({}: HeroProps) => {
 
             <div
                 id="bottom-menu"
-                className="z-30 flex justify-center pt-6 pb-8 lg:justify-between lg:py-5 lg:text-2xl"
+                className="z-30 flex justify-center pt-6 pb-6 lg:justify-between lg:py-5 lg:text-2xl"
             >
                 <div id="links" className="flex gap-2 lg:gap-4">
                     <Button title="Github" icon="github" onClick={""} />
