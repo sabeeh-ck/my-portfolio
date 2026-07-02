@@ -23,7 +23,7 @@ const Hero = ({}: HeroProps) => {
             scrollTrigger: {
                 trigger: heroRef.current,
                 start: "top top",
-                end: "+=120%",
+                end: "+=130%",
                 scrub: true,
                 pin: true,
                 pinSpacing: false,
@@ -130,11 +130,17 @@ const Hero = ({}: HeroProps) => {
                 className="z-30 flex justify-center pt-6 pb-6 lg:justify-between lg:py-5 lg:text-2xl"
             >
                 <div id="links" className="flex gap-2 lg:gap-4">
-                    <Button title="Github" icon="github" onClick={""} />
+                    <Button icon="github" onClick={""}>
+                        GitHub
+                    </Button>
                     <p>/</p>
-                    <Button title="LinkedIn" icon="linkedIn" onClick={""} />
+                    <Button icon="linkedIn" onClick={""}>
+                        LinkedIn
+                    </Button>
                     <p>/</p>
-                    <Button title="Resume" icon="resume" onClick={""} />
+                    <Button icon="resume" onClick={""}>
+                        Resume
+                    </Button>
                 </div>
                 <div className="hidden lg:block">
                     <p>V2.0</p>

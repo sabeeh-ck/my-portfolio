@@ -4,14 +4,14 @@ import { IconName } from "./icons/iconPaths";
 import Link from "next/link";
 
 interface ButtonProps {
-    title?: string;
+    children?: string;
     icon: IconName;
     onClick: string;
     "aria-label"?: string;
 }
 
 const Button = ({
-    title,
+    children,
     icon,
     onClick,
     "aria-label": ariaLabel,
@@ -23,7 +23,7 @@ const Button = ({
             href={onClick}
         >
             <Icon name={icon} className="size-4 lg:size-6" />
-            {title}
+            <p>{children}</p>
         </Link>
     );
 };
