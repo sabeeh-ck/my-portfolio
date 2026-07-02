@@ -16,7 +16,7 @@ export const Icon = ({ name, className = "" }: IconProps) => {
     return (
         <svg
             viewBox={icon.viewBox}
-            className={`inline-block shrink-0 fill-transparent stroke-current stroke-2 align-middle text-current ${className}`}
+            className={`inline-block shrink-0 align-middle text-current ${className}`}
             dangerouslySetInnerHTML={{ __html: icon.body }}
         />
     );
