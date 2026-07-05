@@ -17,13 +17,13 @@ const Connect = ({}: ConnectProps) => {
                     id="links"
                     className="flex flex-col gap-2 lg:gap-4 lg:text-2xl"
                 >
-                    <Button icon="github" onClick={""}>
+                    <Button icon="github" type="link" onClick={""}>
                         GitHub
                     </Button>
-                    <Button icon="linkedIn" onClick={""}>
+                    <Button icon="linkedIn" type="link" onClick={""}>
                         LinkedIn
                     </Button>
-                    <Button icon="resume" onClick={""}>
+                    <Button icon="resume" type="download" onClick={""}>
                         Resume
                     </Button>
                 </div>
