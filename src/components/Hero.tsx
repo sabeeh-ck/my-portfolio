@@ -114,7 +114,7 @@ const Hero = ({}: HeroProps) => {
             <div className="absolute inset-0 z-10 grid grid-cols-5 gap-6 overflow-x-hidden px-6 pt-32 lg:grid-cols-12 lg:px-16 lg:pt-24">
                 <div
                     id="hero-text"
-                    className="col-span-4 col-start-2 text-sm lg:col-span-6 lg:col-start-7 lg:text-2xl"
+                    className="col-span-4 col-start-2 text-sm lg:col-span-4 lg:col-start-9 lg:text-2xl"
                 >
                     <p>
                         Designing and engineering scalable full-stack
@@ -130,15 +130,15 @@ const Hero = ({}: HeroProps) => {
                 className="z-30 flex justify-center pt-6 pb-6 lg:justify-between lg:py-5 lg:text-2xl"
             >
                 <div id="links" className="flex gap-2 lg:gap-4">
-                    <Button icon="github" onClick={""}>
+                    <Button icon="github" type="link" onClick={""}>
                         GitHub
                     </Button>
                     <p>/</p>
-                    <Button icon="linkedIn" onClick={""}>
+                    <Button icon="linkedIn" type="link" onClick={""}>
                         LinkedIn
                     </Button>
                     <p>/</p>
-                    <Button icon="resume" onClick={""}>
+                    <Button icon="resume" type="download" onClick={""}>
                         Resume
                     </Button>
                 </div>

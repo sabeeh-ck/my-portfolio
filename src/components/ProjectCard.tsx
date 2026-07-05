@@ -43,12 +43,20 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     </div>
                     <div className="text-2xl">
                         {project.liveUrl && (
-                            <Button icon="globe" onClick={project.liveUrl}>
+                            <Button
+                                icon="globe"
+                                type="link"
+                                onClick={project.liveUrl}
+                            >
                                 Visit Site
                             </Button>
                         )}
                         {project.repoUrl && (
-                            <Button icon="repo" onClick={project.repoUrl}>
+                            <Button
+                                icon="repo"
+                                type="link"
+                                onClick={project.repoUrl}
+                            >
                                 View Code
                             </Button>
                         )}

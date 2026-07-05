@@ -1,13 +1,12 @@
-import { MouseEventHandler, ReactNode } from "react";
 import { Icon } from "./icons/Icon";
 import { IconName } from "./icons/iconPaths";
-import Link from "next/link";
 
 interface ButtonProps {
     children?: string;
     icon: IconName;
     onClick: string;
     "aria-label"?: string;
+    type: "link" | "download";
 }
 
 const Button = ({
@@ -15,16 +14,25 @@ const Button = ({
     icon,
     onClick,
     "aria-label": ariaLabel,
+    type,
 }: ButtonProps) => {
     return (
-        <Link
+        <a
             aria-label={ariaLabel}
-            className="flex items-center gap-1 lg:gap-2"
             href={onClick}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-1 lg:gap-1"
         >
-            <Icon name={icon} className="size-4 lg:size-6" />
-            <p>{children}</p>
-        </Link>
+            <div className="flex items-center gap-2">
+                <Icon name={icon} className="size-4 lg:size-6" />
+                <p>{children}</p>
+            </div>
+            <Icon
+                name={type === "link" ? "arrowUpRight" : "arrowDown"}
+                className="hidden! size-4 group-hover:inline-block! lg:size-6"
+            />
+        </a>
     );
 };
 
