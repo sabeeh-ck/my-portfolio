@@ -16,6 +16,7 @@ export const skills = {
         { name: "JavaScript", icon: "javascript" },
         { name: "Tailwind CSS", icon: "tailwind" },
         { name: "Framer Motion", icon: "framerMotion" },
+        { name: "GSAP", icon: "gsap" },
         {
             name: "React Router",
             icon: "reactRouter",
