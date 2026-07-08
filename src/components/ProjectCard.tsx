@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 className="flex h-64 w-full shrink-0 flex-col gap-2"
             >
                 <div className="grid w-full grid-cols-8 items-center gap-6">
-                    <p className="col-span-6 text-4xl font-bold">
+                    <p className="col-span-6 text-3xl font-bold">
                         {project.tagline}
                     </p>
                     <p className="col-span-2 text-xl">{project.startDate}</p>
