@@ -39,7 +39,7 @@ const Projects = ({}: ProjectsProps) => {
                 scrollTrigger: {
                     trigger: projectRef.current,
                     start: "96 center",
-                    end: () => `+=${dynamicHeight - 125}`,
+                    end: () => `+=${dynamicHeight}`,
                     scrub: true,
                     invalidateOnRefresh: true,
                     markers: true,
@@ -57,6 +57,7 @@ const Projects = ({}: ProjectsProps) => {
                     y: () => {
                         const windowCenter = listWindow.offsetHeight / 2;
                         const firstItemHalf = titleWrappers[0].offsetHeight / 2;
+
                         return (
                             windowCenter -
                             titleWrappers[0].offsetTop -
@@ -116,7 +117,7 @@ const Projects = ({}: ProjectsProps) => {
                     slideCenterTime + transitionDuration,
                 );
 
-                if (listTrack && listWindow && titleWrappers[index]) {
+                if (listTrack && listWindow && titleWrappers[index])
                     tl.to(
                         listTrack,
                         {
@@ -134,9 +135,8 @@ const Projects = ({}: ProjectsProps) => {
                         },
                         slideCenterTime - transitionDuration,
                     );
-                }
 
-                if (trackBall && titleWrappers[index]) {
+                if (trackBall && titleWrappers[index])
                     tl.to(
                         trackBall,
                         {
@@ -159,18 +159,28 @@ const Projects = ({}: ProjectsProps) => {
                         },
                         slideCenterTime - transitionDuration,
                     );
-                }
             });
 
             tl.to(
                 listTrack,
                 {
-                    opacity: 0.5,
+                    opacity: 0,
                     ease: "power1.inOut",
                     duration: 1,
                 },
                 ">",
             );
+
+            if (trackBall && trackLine)
+                tl.to(
+                    trackBall,
+                    {
+                        y: trackLine.offsetHeight,
+                        ease: "none",
+                        duration: 1,
+                    },
+                    "<",
+                );
         },
         { scope: projectRef },
     );
