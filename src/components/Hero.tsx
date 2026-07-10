@@ -5,11 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { Flip, ScrollTrigger } from "gsap/all";
 import Link from "next/link";
 
-interface HeroProps {}
-
 gsap.registerPlugin(useGSAP, ScrollTrigger, Flip);
 
-const Hero = ({}: HeroProps) => {
+const Hero = () => {
     const heroRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
@@ -27,13 +25,13 @@ const Hero = ({}: HeroProps) => {
                 scrub: true,
                 pin: true,
                 pinSpacing: false,
-                markers: true,
             },
         });
 
         const state = Flip.getState([nameSpan, headerLinks]);
 
         const linkSeparator = document.createElement("p");
+        linkSeparator.id = "link-separator";
         linkSeparator.className = "hidden opacity-0 lg:block";
         linkSeparator.textContent = "/";
 
@@ -49,24 +47,15 @@ const Hero = ({}: HeroProps) => {
         );
 
         tl.to(
-            linkSeparator,
+            "#first-name",
             {
-                opacity: 1,
+                yPercent: -65,
+                opacity: 0,
                 ease: "power1.inOut",
-                duration: 0.5,
+                duration: 0.15,
             },
-            0.3,
+            0,
         )
-            .to(
-                "#first-name",
-                {
-                    yPercent: -65,
-                    opacity: 0,
-                    ease: "power1.inOut",
-                    duration: 0.15,
-                },
-                0,
-            )
             .to(
                 ["#bottom-menu", "#bottom-line"],
                 {
@@ -85,6 +74,15 @@ const Hero = ({}: HeroProps) => {
                     ease: "power1.inOut",
                 },
                 0,
+            )
+            .to(
+                linkSeparator,
+                {
+                    opacity: 1,
+                    ease: "power1.inOut",
+                    duration: 0.5,
+                },
+                0.3,
             );
     });
 
