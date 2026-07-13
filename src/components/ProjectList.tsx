@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 const ProjectList = () => (
     <div
         id="project-list-window"
-        className="relative col-span-4 flex h-full flex-col justify-center overflow-hidden"
+        className="relative col-span-4 flex h-1/3 flex-col justify-center overflow-hidden lg:h-full"
     >
         <div
             id="project-list-track"
@@ -11,7 +11,7 @@ const ProjectList = () => (
         >
             <div
                 id="scroll-track-line"
-                className="bg-foreground relative ml-2 w-0"
+                className="bg-foreground relative ml-2 hidden w-0 lg:block"
             >
                 <div
                     id="scroll-track-ball"
@@ -25,9 +25,11 @@ const ProjectList = () => (
                     .map((project, i) => (
                         <div
                             key={project.id}
-                            className="project-list-wrapper flex cursor-pointer items-center justify-start py-4 font-light"
+                            className="project-list-wrapper flex cursor-pointer items-center justify-start py-1 lg:py-4 lg:font-light"
                         >
-                            <p className="text-5xl">{project.title}</p>
+                            <p className="text-2xl lg:text-5xl">
+                                {project.title}
+                            </p>
                         </div>
                     ))}
             </div>
