@@ -10,9 +10,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     return (
         <div
             id="project-card"
-            className="absolute top-0 left-0 flex h-full w-full shrink-0 flex-col justify-end gap-6 pt-28"
+            className="absolute top-0 left-0 flex h-full w-full shrink-0 flex-col gap-4 lg:justify-end lg:gap-6 lg:pt-28"
         >
-            <div id="project-image" className="min-h-0 w-full flex-1">
+            <div
+                id="project-image"
+                className="flex min-h-0 w-full flex-1 justify-center lg:justify-start"
+            >
                 <img
                     src={project.image}
                     alt="Project Preview"
@@ -23,19 +26,22 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 id="project-description"
                 className="flex h-64 w-full shrink-0 flex-col gap-2"
             >
-                <div className="grid w-full grid-cols-8 items-center gap-6">
-                    <p className="col-span-6 text-3xl font-bold">
+                <div className="w-full items-center gap-6 lg:grid lg:grid-cols-8">
+                    <p className="col-span-6 font-bold lg:text-3xl">
                         {project.tagline}
                     </p>
-                    <p className="col-span-2 text-xl">{project.startDate}</p>
+                    <p className="text-sm font-medium lg:col-span-2 lg:text-xl">
+                        {project.startDate}
+                    </p>
                 </div>
+
                 <div
                     id="project-details"
-                    className="grid h-full w-full flex-1 grid-cols-8 gap-6"
+                    className="flex h-full w-full flex-1 flex-col gap-4 lg:grid lg:grid-cols-8 lg:gap-6"
                 >
-                    <div className="col-span-6 flex flex-col gap-4 text-xl">
+                    <div className="flex flex-col gap-2 text-sm lg:col-span-6 lg:gap-4 lg:text-xl">
                         <p>{project.description}</p>
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-1 lg:gap-2">
                             {project.techStack.map((tech, i) => (
                                 <Fragment key={i}>
                                     <p key={tech} className="">
@@ -48,7 +54,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                             ))}
                         </div>
                     </div>
-                    <div className="col-span-2 flex flex-col gap-6 text-2xl">
+
+                    <div
+                        id="buttons"
+                        className="col-span-2 flex justify-end gap-4 text-2xl lg:flex-col lg:justify-start lg:gap-6"
+                    >
                         {project.liveUrl && (
                             <Button
                                 icon="globe"
