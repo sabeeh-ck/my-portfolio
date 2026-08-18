@@ -9,8 +9,8 @@ export default function Contact() {
         },
         {
             name: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/muhammedsabeehck/',
-            value: '@muhammedsabeehck',
+            url: 'https://www.linkedin.com/in/sabeeh-ck/',
+            value: '@sabeeh-ck',
         },
     ]
 
