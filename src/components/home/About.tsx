@@ -12,7 +12,7 @@ const About = () => (
         </p>
         <article className="flex flex-col gap-3">
             <h3>Education</h3>
-            <div className="border-border bg-surface flex items-start gap-2 rounded-2xl border p-2 md:gap-4 md:p-4">
+            <div className="border-border bg-surface flex items-start gap-2 rounded-2xl border p-4 md:gap-4 md:p-4">
                 <div className="h-16 w-16 rounded-lg bg-white md:h-24 md:w-24">
                     <img className="p-2" src={vjecLogo} alt="" />
                 </div>
