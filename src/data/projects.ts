@@ -52,12 +52,13 @@ export const projects: Project[] = [
         description:
             'Internal web application that allows company staffs to book meeting rooms, view availability in real time and prevent double bookings.',
         startDate: '2026-02',
+        endDate: '2026-07',
         type: 'academic',
         techStack: ['react', 'tailwindcss', 'express', 'mongodb'],
         image: '',
         liveUrl: 'https://meetslot-ck.vercel.app',
         repoUrl: 'https://github.com/sabeeh-ck/MeetSlot',
-        status: 'wip',
+        status: 'done',
         order: 2,
     },
     {
